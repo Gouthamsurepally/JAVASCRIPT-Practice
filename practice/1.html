@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h2{
+           text-align: center;
+        }
+        form{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            border: 5px solid black;
+            width: 300px;
+            padding: 10px;margin: auto;
+        }
+        input,select{
+            margin: 5px 0;
+        }
+    </style>
+    <script>
+       var details={
+        countries:["India","USA","Australia"],
+        states:[["Madhya Pradesh","Utter Pradesh","Bihar","Telangana"],["Montana","Utah","Colorado","Nevada"],["Vextoris","Northon Territory","Western Australia","South Australia"]]
+       }
+
+        function LoadCountry(){
+            details.countries.unshift("Select Country");
+            details.countries.map(country=>{
+                var option = document.createElement("option");
+                option.value=country;
+                option.innerHTML=country;
+                document.getElementById("country").appendChild(option);
+            })
+            
+            
+        }
+       function handleChange(){
+        var ctr=document.getElementById('country').value;
+        var state=document.getElementById("state");
+        switch(ctr){
+        case 'India':
+            state.innerHTML='';
+            details.states[0].map(stat=>{
+                console.log(stat);
+                        var option = document.createElement('option');
+                        option.innerHTML=stat;
+                        state.appendChild(option);
+                    })
+                    break;
+        case 'USA':
+            state.innerHTML='';
+            details.states[1].map(stat=>{
+                console.log(stat);
+                        var option = document.createElement('option');
+                        option.innerHTML=stat;
+                        state.appendChild(option);
+                    })
+                    break;
+        case 'Australia':
+            state.innerHTML='';
+            details.states[2].map(stat=>{
+                console.log(stat);
+                        var option = document.createElement('option');
+                        option.innerHTML=stat;
+                        state.appendChild(option);
+                    })
+                    break;
+        default:
+            state.innerHTML='';
+            break;
+        
+        }
+    }
+       
+        function bodyLoad(){
+            LoadCountry();
+            
+        }
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <h2>Registration Form</h2>
+    <form action="">
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+        <label for="add">Address</label>
+        <textarea name="add" id="add" cols="20" rows="5"></textarea>
+        <label for="country">Country</label>
+        <select onchange="handleChange()" name="country" id="country">
+            
+        </select>
+        <label for="state">State</label>
+        <select name="state" id="state">
+            
+        </select>
+    </form>
+</body>
+</html>

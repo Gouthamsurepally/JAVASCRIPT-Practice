@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert box</title>
+    <script>
+        function DeleteClick(){
+            alert("record will deleted");
+        }
+        function bodyload(){
+            document.querySelector(".btnRegister").value="register";
+        }
+
+    </script>
+</head>
+<body onload="bodyload()">
+    
+    <form>
+        <h2>register</h2>
+        <input type="text">
+        <input type="button" class="btnRegister">
+    </form>
+    <button onclick="DeleteClick()">Delete</button>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time interval</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var count=0;
+        function Loading(){
+            count++;
+            document.getElementById("status").innerHTML=`${count}%completed`;
+            if(count==100){
+                document.getElementById("LoadingContainer").style.display="none";
+                document.getElementById("imgContainer").style.display="block";
+            }
+        }
+        function LoadImageClick(){
+            document.getElementById("btnContainer").style.display="none";
+            document.getElementById("LoadingContainer").style.display="block";
+            setInterval(Loading,100);
+        }
+    </script>
+</head>
+<body class="container-fluid d-flex justify-content-center align-items-center" style="height:100vh">
+    <div>
+        <div id="btnContainer">
+            <button class="btn btn-primary" onclick="LoadImageClick()">Load image</button>
+        </div>
+        <div id="LoadingContainer" style="display:none" class="text-center">
+            <div class="spinner-border text-success"></div>
+            <div id="status"></div>
+        </div>
+        <div id="imgContainer" style="display:none">
+            <img src="../public/assets/a22.jpg" width="100%" height="400">
+
+        </div>
+    </div>
+    
+</body>
+</html>

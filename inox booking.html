@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INOX Booking</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+        function BookClick(){
+            document.getElementById("lblMovie").innerHTML= document.getElementById("lstMovie").value;
+            document.getElementById("lblCinemas").innerHTML= document.getElementById("lstCinemas").value;
+            document.getElementById("lblDate").innerHTML=document.getElementById("lstDate").value;
+            document.getElementById("lblTiming").innerHTML= document.getElementById("lstTiming").value;
+            document.getElementById("lblSeats").innerHTML=document.getElementById("lstSeats").value;
+
+            poster = document.getElementById("poster");
+            if(document.getElementById("lstMovie").value=="Jailer"){
+            
+                poster.src ="../public/assets/jailer.jpg";
+            } else{
+                poster.src = "../public/assets/bhola.jpg";
+            }
+
+            document.getElementById("summary-container").style.display = "block";
+            document.getElementById("Btnbooking").style.display = "none";
+
+        }
+
+    </script>
+</head>
+<body class="container-fluid bg-secondary-subtle">
+    <button class="btn btn-danger mt-4" id="Btnbooking" data-bs-target="#booking" data-bs-toggle="modal"> Quick Booking </button>
+    <div id="summary-container" style="display: none;">
+        <h2>Booking Summary</h2>
+        <img width="25%" height="300px" id="poster">
+        
+            <dl class="row">
+                <dt class="col-2">Movie</dt>
+                <dd class="col-10"  id="lblMovie"></dd>
+                <dt class="col-2">Cinemas</dt>
+                <dd class="col-10" id="lblCinemas"></dd>
+                <dt class="col-2">Date</dt>
+                <dd class="col-10" id="lblDate"></dd>
+                <dt class="col-2">Timing</dt>
+                <dd class="col-10" id="lblTiming"></dd>
+                <dt class="col-2">Seats</dt>
+                <dd class="col-10" id="lblSeats"></dd>
+                <button class="btn btn-link" data-bs-target="#booking" data-bs-toggle="modal">Modify booking</button>
+            </dl>
+            
+    </div>
+
+    <div class="modal fade " id="booking">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content bg-success-subtle">
+                <div class="modal-header">
+                    <h3>Quick Booking</h3>
+                    <button class=" btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <select class="form-select" id="lstMovie">
+                                <option>Select movie</option>
+                                <option>Jailer</option>
+                                <option>Bhola shankar</option>
+
+                            </select>
+                        </div>
+                        <div> 
+                            <select class="form-select" id="lstCinemas">
+                                <option>Select cinemas</option>
+                                <option>GVK B hills</option>
+                                <option>GVK J hills</option>
+                            </select>
+                        </div>
+                        <div> 
+                            <select class="form-select" id="lstDate">
+                                <option>Select Date</option>
+                                <option>17 Aug- today</option>
+                                <option>18 Aug-tomarrow</option>
+                            </select>
+                        </div>
+                        <div> 
+                            <select class="form-select" id="lstTiming">
+                                <option>Select timing</option>
+                                <option>10:35 AM</option>
+                                <option>2:30 PM</option>
+                            </select>
+                        </div> 
+                        <div> 
+                            <select class="form-select" id="lstSeats">
+                                <option>Select seats</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                       <div>
+                         <button class="btn btn-danger" data-bs-dismiss="modal" onclick="BookClick()">Book Here</button>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!--
+    --every function can have only one rest parameter
+    --you can have other parameters with rest parameter
+    --rest parameter must be the last parameter in formal list
+
+    syntax:
+    function demo(...param1, ...param2)   //invalid
+    function demo(...param1,title)        //invalid
+    function demo(title,...param1)        //valid
+
+>> a rest parameter reads upto end,  hence it must be the last parameter
+-->
+
+
+<script>
+    function Details(title,...product){
+        var [name,price,stock,rating]=product;
+        if(price){
+            document.write(`<h2>${title}</h2> Name=${name} <br> Price=${price} <br> Stock=${stock}<br>Rating=${rating.rate}`);
+         
+        }
+        else{
+            document.write(` Name=${name}<br> Stock=${stock}`);
+        }
+    }
+    Details("Product Details","Tv",45000,true,{rate:4.3});
+
+</script>

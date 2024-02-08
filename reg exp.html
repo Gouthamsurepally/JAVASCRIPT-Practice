@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular expression</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function SubmitClick(){
+            var age= document.getElementById("age").value;
+            var error= document.getElementById("error");
+            var regExp= /\d{2}/;
+            if(age.match(regExp)){
+                document.write("your age:"+ age);
+            } else{
+                error.innerHTML= "Age must be 2 digit number";
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <dl>
+        <dt>Your Age</dt>
+        <dd><input type="text" class="form-control w-25" id="age"></dd>
+        <dd id="error"></dd>
+    </dl>
+    <button class="btn btn-warning" onclick="SubmitClick()"> Submit</button>
+    
+</body>
+</html>

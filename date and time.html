@@ -1,0 +1,23 @@
+<!--<script>
+    var product= {
+        Name:"samsung tv",
+        Mfd: new Date("2023-04-30 15:06:21.52")
+    }
+    document.write(` Name=${product.Name}<br>Mfd=${product.Mfd.toLocaleString()}`);
+</script>
+-->
+<script>
+    var product = {
+        Name: "samsung tv",
+        Mfd: new Date("2023-04-30 15:06:21.52")
+    }
+    product.Mfd.setMonth(3);
+    product.Mfd.setDate(23)
+    var weekdays=["sun","mon","tues","wed","thurs","fri","sat"];
+    var months=["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
+    document.write(`
+                 mfd year:${product.Mfd.getFullYear()}<br>
+                 mfd month:${months[product.Mfd.getMonth()]}<br>
+                 mfg weekday:${weekdays[product.Mfd.getDay()]}<br>
+                 mfd date:${product.Mfd.getDate()}     `)
+</script>

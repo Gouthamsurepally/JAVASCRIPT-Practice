@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let captche = ""; 
+ 
+        function genCaptche() {
+            const Elements = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            captche = "";
+
+            for (let i = 0; i < 5; i++) {
+                captche += Elements.charAt(Math.floor(Math.random() * Elements.length));
+            }
+            document.getElementById("GeneratedCaptche").textContent = captche;
+        }
+
+        function buttonClick() {
+            genCaptche();
+        }
+
+        function bodyload() {
+            
+            genCaptche();
+        }
+
+        function handleBlur() {
+            var result = document.getElementById("handleText").value;
+            if (result === captche) {
+                alert("CAPTCHA is valid!");
+            } else {
+                alert("Invalid CAPTCHA. Please try again.");
+            }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div>
+        <button onclick="buttonClick()">Click</button>
+    </div>
+
+    <br>
+    <div>
+        <input type="text" id="handleText" onblur="handleBlur()">
+    </div>
+    <br>
+    <div id="GeneratedCaptche">
+
+    </div>
+    <br>
+    <button>Login</button>
+    
+</body>
+</html>
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creating elements with map()</title>
+    <script>
+        var categories=["All","Electonics","Footwear","Fashion"];
+        function LoadClick(){
+            categories.map(function(category){
+                var li=document.createElement("li");
+                li.innerHTML=category;
+                document.querySelector("ol").appendChild(li);
+
+                var option=document.createElement("option");
+                option.innerHTML=category;
+                document.querySelector("select").appendChild(option);
+
+               var ul_li=document.createElement("li");
+               var input=document.createElement("input");
+               input.type="checkbox";
+               input.value=category;
+               var label=document.createElement("label");
+               label.innerHTML=category;
+               ul_li.appendChild(input);
+               ul_li.appendChild(label);
+               document.querySelector("ul").appendChild(ul_li);
+
+
+               var tr=document.createElement("tr");
+               tr.innerHTML=category;
+               document.querySelector("table").appendChild(tr);
+
+
+            })
+        }
+    </script>
+    <style>
+        ul{
+            list-style: none;
+
+        }
+    </style>
+</head>
+<body>
+    <button onclick="LoadClick()"> Load </button>
+    <br>
+    <br>
+    <ol>
+
+    </ol>
+    <select>
+
+    </select>
+    <ul>
+
+    </ul>
+    <table  border="2" width="200">
+        <thead>
+            <tr>
+                <th>Categories</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+            </tr>
+        </tbody>
+
+    </table>
+    
+</body>
+</html>

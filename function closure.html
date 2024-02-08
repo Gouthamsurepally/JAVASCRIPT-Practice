@@ -1,0 +1,26 @@
+<!--
+                function closure
+  >>closure is a mechanism that allows members of outer scope accessible to inner scope.
+  >>every function by default have a closure.
+  
+  syntax:
+  function outer()
+  {
+    function inner(){
+
+    }  
+    ... we can access inner value...
+  }
+  outer();     
+-->
+<script>
+    function outer(){
+        let x=10;
+        function inner(){
+            let y=20;
+            return x*y;   
+        }
+        document.write(`Multiplication=${inner()}`);
+    }
+    outer();
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meter</title>
+    <script>
+        function SetMeter(min,max,value){
+            var status=document.getElementById("status");
+            status.min=min;
+            status.max=max;
+            status.value=value;
+
+        }
+
+        function VerifyPassword(){
+            var password= document.getElementById("txtPwd").value;
+            var pwdError= document.getElementById("pwdError");
+            var regExp= / (?=.*[A-Z])\w{4,10}/
+            if(password.match (regExp)){
+                pwdError.innerHTML="strong password".fontcolor('red');
+                SetMeter(1,100,100);
+            } else{
+                if(password.length<4){
+                    pwdError.innerHTML="poor password-min 4 chars required".fontcolor('red');
+                    SetMeter(0,100,30);
+
+                } else{
+                    pwdError.innerHTML="weak password-one must be uppercase letter".fontcolor('gold');
+                    SetMeter(0,100,80);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Your Password</dt>
+        <dd><input type="password" id="txtPwd" onkeyup="VerifyPassword()">
+        </dd>
+        <dd>
+            <meter id="status" min="1" max="100" value="1"></meter>
+        </dd>
+        <dd id="pwdError"></dd>
+    </dl>
+</body>
+</html>

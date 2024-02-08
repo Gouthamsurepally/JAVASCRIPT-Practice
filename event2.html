@@ -1,0 +1,54 @@
+<!--
+       Default Arguement
+     -------------------   
+     key word "this.event(might be any value)"
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Database(value){
+            switch(value){
+                case "Insert": 
+                  document.write("Record inserted");
+                  break;
+                case "Update": 
+                  document.write("Record updated");
+                  break;
+                case "Delete": 
+                  document.write("Record deleted");
+                  break;   
+            }
+        }
+    </script>
+</head>
+<body>
+    <button value="Insert" onclick="Database(this.value)">Insert</button>
+    <button value="Update" onclick="Database(this.value)">Update</button>
+    <button value="Delete" onclick="Database(this.value)">Delete</button>
+</body>
+</html>
+<!--
+ --every event comprises of following
+ a)event
+ b)Event Handler  
+ C)Event Listener
+ 
+ onclick="InsertClick()"             =>Event Handler
+ onclick                             =>Event
+
+ --if element is dynamically created, then we have to configure events using EventListener.
+ --EventListener requires various events to configure dynamicaly, the javascript events are classified into following categories.
+
+ 1.mouse events
+ 2.keyboard events
+ 3.button events
+ 4.form events
+ 5.touch events
+ 6.element state events
+ 7.timer events
+ 8.clipboard events etc..  
+-->

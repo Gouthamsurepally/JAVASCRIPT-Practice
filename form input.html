@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form inputs</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+        function AddClick(){
+            document.getElementById("lblName").innerHTML = document.getElementById("txtName").value;
+            document.getElementById("lblPrice").innerHTML = document.getElementById("txtPrice").value;
+            document.getElementById("lblCity").innerHTML = document.getElementById("txtCity").value;
+
+           StockCheckbox= document.getElementById("txtStock");
+           StockStatus="";
+           if( StockCheckbox.checked){
+            StockStatus="Available";
+           }else{
+            StockStatus="Out of stock";
+           }
+           document.getElementById("lblStock").innerHTML = StockStatus;
+
+           document.getElementById("ProductDetails").style.display="block";
+           document.getElementById("btnRegister").style.display="none";
+        }
+        function EditClick(){
+            document.getElementById("btnAdd").innerHTML="Save cart";
+            document.getElementById("btnAdd").className="btn btn-warning w-100"
+        }
+    </script>
+</head>
+<body class="container-fluid bg-dark-subtle">
+    <button class="btn btn-primary mt-4" id="btnRegister" data-bs-target="#addContainer" data-bs-toggle="modal">Add Products</button>
+    
+    <div id="ProductDetails" style="display: none;" >
+        <h3>Product summary</h3>
+        <dl>
+            <dt>Product Name</dt>
+            <dd id="lblName"></dd>
+            <dt>Product Price</dt>
+            <dd id="lblPrice"></dd>
+            <dt>City Name</dt>
+            <dd id="lblCity"></dd>
+            <dt>Product Stock</dt>
+            <dd id="lblStock"></dd>
+        </dl>
+        <button class="btn btn-success" onclick="EditClick()" data-bs-target="#addContainer" data-bs-toggle="modal">Edit Product</button>
+    </div>
+
+
+    <div class="modal fade" id="addContainer">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-warning-subtle">
+                    <h2>Fill the details</h2>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+                <div class="modal-body">
+                    <dl>
+                        <dt>Name</dt>
+                        <dd><input type="text" class="form-control" id="txtName" placeholder="item name"></dd>
+                        <dt>Price</dt>
+                        <dd><input type="number" class="form-control" id="txtPrice" placeholder="price"></dd>
+                        <dt>City</dt>
+                        <dd>
+                            <select class="form-select" id="txtCity">
+                                <option>select city</option>
+                                <option>Hyderabad</option>
+                                <option>Chennai</option>
+                                <option>Delhi</option>
+                                
+                            </select>
+                        </dd>
+                        <dt>Stock</dt>
+                            <dd class="form-switch">
+                              <input type="checkbox" class="form-check-input" id="txtStock"><label>Available</label>
+                            </dd>
+                    </dl>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger w-100" id="btnAdd" data-bs-dismiss="modal" onclick="AddClick()">Add cart</button>
+
+                </div>
+
+            </div>
+
+        </div>
+       
+    </div>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

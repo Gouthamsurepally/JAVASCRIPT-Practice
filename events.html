@@ -1,0 +1,51 @@
+<!--
+                Javascript events
+            ---------------------------
+--event is a msg sent by sender to its subscriber in order to notify the change.
+--it follows software design pattern called "observer".
+--observer is a communication  pattern.
+
+syntax:
+function inserrtclick(){           // subsciber
+
+}
+<button onclick=buttonclick()>      //sender
+
+--subscriber defines the actions to perform.
+--sender triggers the notification.
+--javascript events have 2 default arguements.
+a)this
+b)event
+
+<button onclick="insrtclick(this,event)">
+
+    --"this" sends information about current element, which includes 
+       id,name,className,width,height,src,href etc..
+    --"event" sends information about current event, which includes
+      clientX,clientY,shiftkey,ctrlKey,altKey etc...   
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function InsertClick(obj,e){
+            document.write(`
+            Button Id: ${obj.id}<br>
+            Button Value: ${obj.value}<br>
+            Class Name: ${obj.className}<br>
+            X-axis position:${e.clientX}<br>
+            Y-axis Position:${e.clientY}<br>
+            ctrl Key :${e.ctrlKey}<br>
+            shift Key:${e.shiftKey}<br>
+            `)
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="InsertClick(this,event)" id="btnInsert" value="insert" class="btn btn-primary">Insert</button>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements refer by name</title>
+    <script>
+        function bodyload(){
+      result= document.getElementsByName("pay");
+        alert("Total Number Of Payment Methods:" + result.length)
+      // console.log("total : " + x.length)
+    }
+    </script>
+
+</head>
+<body onload="bodyload()">
+    <fieldset>
+        <legend>Payment methods</legend>
+        <input type="radio" name="pay">Cash
+        <input type="radio" name="pay">UPI
+        <input type="radio" name="pay">Credit card
+        <input type="radio" name="pay">Debit card
+        
+    </fieldset>
+</body>
+</html>

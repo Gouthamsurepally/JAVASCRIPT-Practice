@@ -1,0 +1,55 @@
+<!--
+    parameter type
+    >> primitive
+    >>non primitive
+    >>function
+
+    --in js formal parameter is just a reference name, into that parameter you can store anything.
+    syntax;
+    function demo(ref)
+    {
+
+    }
+    demo(1);    -- number
+    demo("tv"); -- string
+    demo(true); --boolean
+    demo([]);  -- array
+    demo({});  -- object
+    demo([{}{}]);  -- object of arrays
+    demo(function(){}); -- function
+
+    -------------------------------------------------------
+
+<script>
+    function demo(collection){
+        collection.map(function(item){
+            document.write(item+ "<br>");
+        })
+
+    }
+    demo(["delhi","hyd","chennai",]);
+</script>
+---------------------------------------------------
+ex2
+
+
+<script>
+    function demo(product){
+        document.write(`
+        Name:${product.Name}<br>
+        Price:${product.Price}
+        
+        `);
+    }
+    demo({Name:"samsung tv", Price:23000.00});
+
+</script>
+---------------------------------------------------------------
+-->
+<script>
+    function demo(print){
+        print();
+    }
+    demo(function(){document.write("hello java script")});
+</script>
+

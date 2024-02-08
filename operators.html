@@ -1,0 +1,63 @@
+<!--
+  1.  by using "typeof" operator 
+    we can find out the data type of value  in a key
+
+    syntax:
+    typeof object[key]
+
+<script>
+    fetch("http://fakestoreapi.com/products/1")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(product){
+        Object.keys(product).map(function(key){
+            document.write(`${key}[${typeof product[key]}]<br>`)
+        })
+    })
+</script>
+-------------------------------------------------------------------------------------
+
+2.  "in" operator is used to find existance of key
+syntax>>>
+ 
+"key" in objectName;   ==> returns true if value is found
+------
+<script>
+    fetch("http://fakestoreapi.com/products/1")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(product){
+        document.write(` is fakestore product having id details ? ${"id" in product}`);
+    })
+</script>
+----------------------------------------------------------------------------------------
+3.  "delete" operator is used to remove key from object
+
+syntax: delete object.key
+
+<script>
+    fetch("http://fakestoreapi.com/products/2")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(product){
+        delete product.price;
+        document.write(`Title:${product.title}<br>Price:${product.price}`);
+    })
+</script>
+---------------------------------------------------------------------------------------
+4.  "length" operator is used to count the total number of keys
+
+syntax:  object.keys(product).length
+-->
+<script>
+    fetch("http://fakestoreapi.com/products/2")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(product){
+        document.write(`total no of keys: ${Object.keys(product).length}`);
+    })
+    </script>

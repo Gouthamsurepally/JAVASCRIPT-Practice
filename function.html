@@ -1,0 +1,29 @@
+<!--
+    we can configure javascript functions in 2 ways
+    ==> function expression
+    ex: var hello= function(){
+
+    }
+
+    ==>function declaration
+    ex: function hello(){
+
+    }
+-->
+
+<script>
+   var result= function(){};
+   var password= prompt("enter password");
+   if(password==="admin"){
+    result= function(){
+        document.write(`login success`);
+    }
+   } else{
+    result= function(){
+        document.write(`invalid credentials <br>`);
+        document.write(`try again <a href="functions.html">Click </a>`)
+    }
+   }
+   result();
+   
+</script>

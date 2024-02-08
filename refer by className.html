@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements refer by class name</title>
+    <script>
+        function bodyload(){
+            document.querySelector("#pic").src="../public/assets/a8.jpg";
+           result= document.getElementsByClassName("btn-primary");
+           alert("no. of btn-primary:"+result.length)
+           document.querySelector("p").innerHTML="Welcome to javascript";
+           
+
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <p></p>
+    <div>
+      <img width="200px" height="250px" id="pic">  
+    </div>
+    <div>
+        <form>
+            <h2>Register</h2>
+            Email:
+            <input type="email">
+            <input type="button" class="btn-primary" name="btnRegister">
+        </form>
+    </div>
+    <div>
+       <form>
+        <h2>Login</h2>
+        Mobile:
+        <input type="number">
+        <input type="button" id="btnwarning" name="btnLogin">
+       </form>
+    </div>
+    <button class=" btn-success">Submit</button>
+    <button class=" btn-danger">Reset</button>
+    
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!--
+    coversion of string into number can be possible by using
+    >>toString()
+    >>toLocaleString()
+-->
+<script>
+   var price= 9999.25;
+   document.write(
+    (price).toLocaleString('eng-IN',{
+        style:"currency",
+        currency: "INR" 
+    })
+   ); 
+   var price1=987999.234;
+   document.write(
+    (price1).toLocaleString('eng-IN',{
+        style:'currency',
+        currency:'USD'
+    })
+   );
+
+</script>

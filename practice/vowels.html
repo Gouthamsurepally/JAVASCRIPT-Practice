@@ -1,0 +1,34 @@
+<!-- 
+
+
+<script>
+    const array=[6,7,4,5];
+    let firstLar=array[0];
+    let secondLar=array[0];
+
+    for(let char of array){
+        if(char>firstLar){
+            secondLar=firstLar;
+            firstLar=char;
+        }
+        else if(char>secondLar && char !==firstLar){
+            secondLar=char
+        }
+        else{
+            continue
+        }
+    }
+
+    document.write(secondLar);
+</script> -->
+
+
+<script>
+    let oddNumbers=[];
+    for(let i=0; i<=100; i++){
+        if(i%2 !==0){
+            oddNumbers.push(i);
+        }
+    }
+    console.log(oddNumbers);
+</script>

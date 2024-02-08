@@ -1,0 +1,39 @@
+<!--
+    by using "for..in" and "object.keys()"
+    we can read alla keys from an  object
+
+    for..in:>>
+     syntax:
+     >>> for(var property in object)
+     {
+
+     }
+    -->    
+
+<script>
+    fetch("http://fakestoreapi.com/products/1")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(product){
+        for(var property in product){
+            document.write(` ${property}=[${typeof property}]<br>`)
+
+        }
+    })
+</script>
+
+<!---
+<script>
+    fetch("http://fakestoreapi.com/products/1")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(product){
+        Object.keys(product).map(function(key){
+            document.write(`key <br>`);
+
+        })
+    })
+</script>
+-->

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SubmitClick(){
+            var A=parseInt(document.getElementById("txtA").value);
+            var B=parseInt(document.getElementById("txtB").value);
+           
+            document.getElementById("result").innerHTML=`Result:${A+B}`
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>enter A</dt> 
+        <dd><input type="number" id="txtA"></dd>
+        <dt>enter B</dt>
+        <dd><input type="number" id="txtB"></dd>
+        
+        
+    </dl>
+    <button onclick="SubmitClick()">ADD</button>
+    <p id="result"></p>
+</body>
+</html>

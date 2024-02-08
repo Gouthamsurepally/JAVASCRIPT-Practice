@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript formatting methods</title>
+    <script>
+        function VerifyMobile(){
+            var txtMobile= document.getElementById("txtMobile").value;
+            var errorMobile= document.getElementById("errorMobile");
+            if (txtMobile==""){
+                errorMobile.innerHTML="mobile required".bold(). fontsize(4).fontcolor('red');
+
+            }else{
+                errorMobile.innerHTML="mobile verified".bold().fontsize(4).fontcolor('green');
+
+            }
+
+        }
+        function ChangeCase(){
+            var userName= document.getElementById("txtName").value;
+            document.getElementById("txtName").value= userName.toUpperCase();
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Username</dt>
+        <dd>
+            <input type="text" id="txtName" onkeyup="ChangeCase()">
+        </dd>
+        <dt>Enter Mobile</dt>
+        <dd><input type="text" id="txtMobile" onblur="VerifyMobile()"></dd>
+        <dd id="errorMobile"></dd>
+    </dl>
+</body>
+</html>

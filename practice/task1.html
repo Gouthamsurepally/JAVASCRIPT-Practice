@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<script>
+    var countryDetails = {
+        country: [      
+            { "name": "India", "states": ["Telangana", "Andhra Pradesh"]},
+            { "name": "USA", "states": ["New York", "California"]}
+        ]
+    };
+    function LoadCountry(){
+       
+        countryDetails.country.map(country=>{ 
+            var option=document.createElement("option");
+            option.innerHTML=country.name;
+            document.getElementById("countryName").appendChild(option)
+        })
+    }
+
+    function countryChange(){
+        var Nation=document.getElementById("countryName").value;
+        var State=document.getElementById("stateName");
+
+        switch(Nation){
+            case 'India':
+                State.innerHTML='';
+                countryDetails.country[0].states.map(state=>{
+                    var option=document.createElement("option");
+                    option.innerHTML=state;
+                    State.appendChild(option)
+                })
+                break;
+            case 'USA': 
+            State.innerHTML='';
+            countryDetails.country[1].states.map(state=>{
+                var option=document.createElement("option");
+                option.innerHTML=state;
+                State.appendChild(option);
+            })   
+        }
+       
+    }
+    function bodyload(){
+        LoadCountry();
+    }
+
+</script>
+<body onload="bodyload()" class="container-fluid bg-body-secondary d-flex justify-content-center align-items-center">
+    
+    <form class="w-25">
+        <h1>Registration Page</h1>
+        <dl>
+            <dt>Name:</dt>
+            <dd><input type="text" placeholder="enter name" class="form-control" /></dd>
+            <dt>Age</dt>
+            <dd><input type="number" placeholder="your age" class="form-control"/></dd>
+            <dt>Address</dt>
+            <dd><input type="text" placeholder="your address" class="form-control"/></dd>
+            <dt>Country</dt>
+            <dd>
+                <select class="form-select" id="countryName" onchange="countryChange()">
+                   <option value="">Select country</option>
+                </select>
+            </dd>
+            <dt>State</dt>
+            <dd>
+                <select class="form-select" id="stateName">
+                   
+                </select>
+            </dd>
+        </dl>
+        <button class="btn btn-primary">Register</button>
+    </form>
+</body>
+</html>

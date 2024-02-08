@@ -1,0 +1,67 @@
+<!--
+                    function with return
+  >> return is a jump statement
+  >>it terrminates the function before its memory is disposed
+  >>hence we can use the function memory to store the function values and access from any other function
+  
+  syntax:
+  function Name(){
+    return value;
+  }
+
+  >>a function can return any type of value.
+  a.primitive
+  b.non primitive
+  c.function
+-- -------------------------------
+<script>
+    function Add(a,b,){
+        return a+b;
+    }
+    function print(){
+        document.write(`Addition=${Add(20,40)}`);
+    }
+    print();
+</script> 
+--------------------------------------------------     
+
+<script>
+    function add(collection){
+        return collection;
+    }
+    function print(){
+        add(["DELHI","HYD","CHENNAI","MUMBAI"]).map(function(item){
+            document.write(item +"<br>");
+        })
+    }
+    print();
+</script>  
+-------------------------------------------------------
+
+<script>
+    function verifyPassword(password){
+        if (password=="admin"){
+            return "success";
+        } else{
+            return "invalid";
+        }
+    }
+    document.write(verifyPassword(prompt("enter password")));
+</script>   
+---------------------------------------------------------
+function with  return function
+-->
+<script>
+    function verifyPassword(password){
+        if (password=="admin"){
+            return function(){
+                document.write("login successful");
+            }
+        } else{
+            return function(){
+                document.write("invalid password");
+            }
+        }
+    }
+    verifyPassword(prompt("enter password"))();
+</script>

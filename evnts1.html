@@ -1,0 +1,41 @@
+<!--
+       custom arguemnts
+     -------------------
+--you can also send custom arguemnts using event.
+--custom arguemnt can be any type.
+a)primitive
+b)non primitive
+c)function etc..
+
+syntax:
+      function HaandleClick( obj,collection){
+
+      }
+      <button onclick="HandleClick( { }, [] )">
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function HandleClick(obj,e,product){
+            document.write(`
+               Button Id:${obj.id}<br>
+               Button Value:${obj.value}<br>
+               Class Name:${obj.className}<br>
+               x-axis position:${e.clientX}<br>
+               Y-axis position:${e.clientY}<br>
+               alt key:${e.altKey}<br>
+               Product Name:${product.Name}<br>
+               Product Price:${product.Price}<br>
+            `)
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="HandleClick(this,event,{Name:'TV',Price:50000.50})" id="btnInsert" value="Insert" class="btn btn-primary">Insert</button>
+</body>
+</html>

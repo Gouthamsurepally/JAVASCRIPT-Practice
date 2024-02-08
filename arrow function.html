@@ -1,0 +1,50 @@
+<!--
+            Arrow function
+          -------------------
+>>it is a short hand technique for writing a function ecxpression.
+>>used to minify logic.
+>>it uses following chars
+     () function and its params
+     => return and definition
+     
+     syntax: without arrow
+     ------------------------
+     var addition = function(a,b){
+        return a+b;
+     }
+
+     syntax: with arrow
+     ------------------------
+     var addition=(a,b) =>a+b;
+
+     var hello =()=> {
+        statement 1;
+        statement 2;
+     }
+
+ex:
+
+function hello(uname){
+    document.write(`hello..! ${uname}`);
+}
+
+var hello = uname=> document.write(` hello ! ${uname}`);
+var hello = (uname,age) => document.write(`hello ! ${uname} your age ${age}`);
+-----------------------------------------------------
+ex:
+
+<script>
+    var addition = (a,b) => a+b;
+    document.write("addition=" + addition(20,30));
+</script>
+------------------------------------------------------------>
+
+<script>
+    fetch("http://fakestoreapi.com/products")
+    .then(response=>response.json())
+    .then(products=>{
+        products.map(product=>{
+            document.write(product.title + "<br>")
+        })
+    })
+</script>

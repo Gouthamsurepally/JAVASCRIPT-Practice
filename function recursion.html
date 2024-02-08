@@ -1,0 +1,23 @@
+<!--
+                Function recursion
+            --------------------------
+>>  recursion is a technique of calling a function within the context of same function.
+>> it is often used for creating batch operations.
+>>it can configure a infinite loop.
+>>it is commonly used to build complex mathematical or scientific expresions.
+
+syntax:
+function f1(){
+    f1();
+}
+-->
+<script>
+    function factorial(n){
+        if (n==0){
+            return 1;
+        } else{
+            return n*factorial(n-1);
+        }
+    }
+    document.write(` factorial of 10 is ${factorial(10)}`);
+</script>

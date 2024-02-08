@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css selectors</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function bodyload(){
+            document.querySelector("#pic").src="../public/assets/a22.jpg";
+            document.querySelector(".btnRegister").value="Register";
+            document.querySelector(".btnLogin").value="Login";
+            document.querySelector("p").innerHTML="Welcome to javasript it manipulates DOM".fontcolor("red");
+        }
+    </script>
+    <style>
+        p{
+            font-weight: bold;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body onload="bodyload()" class=" container bg-body-secondary p-4">
+    
+    <div>
+        <img height="300px" width="50%" name="pic" id="pic" border="2">
+    </div>
+    <div>
+        <p></p>
+    </div>
+    <div>
+        <form>
+            <h2>Register</h2>
+            Email:
+            <input type="email" class="form-control w-25 mb-2">
+            <input type="button" name="btnRegister" class="btnRegister btn btn-success mb-3">
+
+        </form>
+    </div>
+    <form>
+        <h2>Login</h2>
+        Enter:
+        <input type="text" class="form-control w-25 mb-2">
+        <input type="button" class="btnLogin btn btn-danger mb-3">
+    </form>
+    
+</body>
+</html>

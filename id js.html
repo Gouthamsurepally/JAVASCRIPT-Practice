@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM by referring id</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function bodyload(){
+            document.getElementById("Pic").src="../public/assets/a9.jpg";
+            document.getElementById("btnRegister").value="register";
+            document.getElememtById("btnLogin").value="login";
+            document.getElementById("genderMale").value="male";
+            document.getElementById("genderFemale").value="female";         
+        }
+
+    </script>
+</head>
+<body  class="container p-4 bg-body-secondary" onload="bodyload()">
+    <div>
+        <img width="300px" height="350px" id="Pic">
+    </div>
+    <form class="w-25 mb-2">
+        <h2>Registration</h2>
+        <input type="text" id="textName1" class="form-control"> <button class="btn btn-success mt-1" id="btnRegister">Register</button>
+    </form>
+    <form class="w-25 mb-2">
+        <h2>Login</h2>
+        <input type="text" id="textName2" class="form-control"> <button class="btn btn-danger mt-1" id="btnLogin">Login</button>       
+    </form>
+    <form class="w-25 mb-2">
+        <dl>
+            <dt>GENDER</dt>
+                <dd class="form-switch">
+                    <input type="radio" class="form-check-input" name="gender" id="genderMale">Male <br><br>
+        
+                 <input type="radio" class="form-check-input" name="gender" id="genderFemale">Female
+                </dd>
+           
+        </dl>
+        <button class="btn btn-primary">submit</button>
+    </form>
+    
+</body>
+</html> 

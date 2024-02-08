@@ -1,0 +1,116 @@
+<!--<script>
+    function countVowels(inputString) {
+    // Initialize a variable to store the count of vowels
+    let vowelCount = 0;
+
+    // Convert the input string to lowercase to make the comparison case-insensitive
+    const lowerCaseString = inputString.toLowerCase();
+
+    // Define an array of vowels
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+    // Iterate through each character in the string
+    for (let i = 0; i < lowerCaseString.length; i++) {
+        // Check if the current character is a vowel
+        if (vowels.includes(lowerCaseString[i])) {
+            // If it is a vowel, increment the vowelCount
+            vowelCount++;
+        }
+    }
+
+    // Return the total count of vowels
+    return vowelCount;
+}
+
+// Example usage:
+const input = "Hello, World!";
+const result = countVowels(input);
+console.log(`The total number of vowels in "${input}" is: ${result}`);
+
+</script>  --
+
+
+  Q2) Reversing a string "gouthamkumar" to "ramukmahtuog"
+<script>
+    const Name="gouthamkumar";
+    let reverse=""
+    for(let i=0;i<Name.length;i++){
+        reverse=Name[i]+reverse
+    }
+    document.write(reverse)
+</script>
+--
+Q3)checking the string as polindrome "sms"="sms"
+----------------------------------------
+<script>
+  //  const Name="sms";
+  //  const reverses=Name.split("").reverse("").join("");
+ //   if(Name==reverses){
+ //       document.write("polindrome")
+ //   }else{
+  //      document.write("not a polindrome");
+  //  }
+
+  const Name="sasds";
+  let reverse=""
+  for(let i=0;i<Name.length;i++){
+    reverse=Name[i]+reverse;
+
+  }if (Name==reverse){
+    document.write("polindrome")
+  }else{
+    document.write("not a polindrome")
+  }
+</script>
+--
+Q4)printing the vowels and consonents
+
+<script>
+    const word="lkjhgfewzxcvbao";
+    const list="aeiou";
+
+    let vowels=[];
+    let consonents=[];
+
+    for(let char of word){
+        if(list.includes(char.toLowerCase())){
+            vowels.push(char);
+        }else{
+            consonents.push(char)
+        }
+    }
+    document.write(`${vowels} <br> ${consonents}`);
+    
+</script>
+-->
+<script>
+   
+    // Initialize an empty array to store prime numbers
+    let primeNumbers = [];
+
+    // Loop through numbers from 2 to 100
+    for (let i = 2; i <= 100; i++) {
+        // Assume the current number is prime initially
+        let isPrime = true;
+
+        // Check for factors by looping from 2 to i - 1
+        for (let j = 2; j < i; j++) {
+            // If i is divisible by any number between 2 and i - 1, it's not prime
+            if (i % j === 0) {
+                isPrime = false;
+                // Exit the inner loop once a factor is found
+                break;
+            }
+        }
+
+        // If isPrime is still true, i is a prime number, so add it to the array
+        if (isPrime) {
+            primeNumbers.push(i);
+        }
+    }
+
+    // Display the array of prime numbers
+    document.write(primeNumbers);
+    
+</script>
+

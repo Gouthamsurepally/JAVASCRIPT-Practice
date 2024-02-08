@@ -1,0 +1,39 @@
+<!--
+                    Function promise
+                    ----------------
+>>promise uses an async technique.
+>>Async is an unblocking technique that allows the task to perform without blocking other tasks .
+>>promise comprises of 3 phases.
+a.pending: initial phase
+b.resolved:it is defined using then()
+c.rejected: it is defined using catch()
+
+--then() will handle response when it is success.
+--catch() will handle error when it failed.
+
+syntax:
+ var refName= new Promise(function(resolve,reject){
+    if(condition){
+        resolve("on success");
+    } else{
+        reject("on failure");
+    }
+ })
+ refName.then(function(){}).catch(function(){})
+-->
+<script>
+    var GetAPI= new Promise(function(resolve,reject){
+        var url=prompt("enter url");
+        if (url=="http://fakestoreapi.com"){
+            resolve("data fetched successfully...")
+        } else{
+            reject("unable to fetch data")
+        }
+    });
+    GetAPI.then(function(res){
+        document.write(`success:${res}`);
+    })
+    .catch(function(exp){
+        document.write(`error:${exp}`);
+    })
+</script>

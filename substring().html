@@ -1,0 +1,24 @@
+<!--<script>
+    var email= prompt("enter email");
+    var id= email.substring( email.indexOf('@'),0);
+    var domain= email.slice(email.indexOf('@')+1);
+    document.write(`your id: ${id} <br> your domain: ${domain}`);
+
+</script>
+
+......split()......
+
+<script>
+    var contacts="Andem-6799755766, naveen-9709456776";
+    var [Andem,naveen]= contacts.split(',');
+    document.write(Andem + "<br>");
+    document.write(naveen);
+</script>
+-->
+<script>
+    var email= prompt("enter mail");
+    var[id,domain]=email.split('@');
+    document.write(id + "<br>" + domain);
+
+
+</script>

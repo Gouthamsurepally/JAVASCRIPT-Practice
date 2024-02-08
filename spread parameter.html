@@ -1,0 +1,19 @@
+<!--
+                     spread syntax for parameters
+ >> a spread approach allows single value to spread into multiple formal parameters.
+ 
+ syntax:
+ function demo(a,b,c,d)
+ {
+
+ }
+ var values=[10,20,30,40];
+ demo(...values);
+-->
+<script>
+    function Details(name,price,stock){
+        document.write(`Name=${name}<br>Price=${price}<br>Stock=${stock}`);
+    }
+    var product = ["tv",45000,true];
+    Details(...product);
+</script>

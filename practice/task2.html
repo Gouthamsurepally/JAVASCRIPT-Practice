@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var contactDetails = {
+    name: 'Goutham',
+    age: 20,
+    gender: 'male',
+    address: {
+        office: {
+            country: {
+                name: 'India',
+                code: 12345,
+            },
+            buildingno: 567,
+            streetname: 'Something steet'
+        },
+        home: {
+            country: 'India',
+            stateInfo: {
+                name: 'Telangana',
+                code: 53341,
+            },
+            houseno: 'ABC'
+        }
+    }
+};
+function getContact(details){
+    var data=contactDetails.address.office.country;
+    for (var item in data){
+        console.log(item + ":" +data[item])
+    }
+}
+  function bodyload(){
+    getContact(contactDetails);
+    
+  }
+       </script>
+    
+</head>
+<body onload="bodyload()">
+      
+</body>
+</html>

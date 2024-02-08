@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndexOf()</title>
+    <script>
+        function VerifyEmail(){
+            var email= document.getElementById("txtEmail").value;
+            var errorEmail= document.getElementById("errorMail");
+            if(email.indexOf("@")==-1){
+                errorEmail.innerHTML="invalid username @ must be added".fontcolor('red');
+            } else{
+                errorEmail.innerHTML="";
+            }
+        }
+         
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Email</dt>
+        <dd><input type="text" id="txtEmail"  onblur="VerifyEmail()"></dd>
+        <dd id="errorMail"></dd>
+       
+    </dl>
+    
+</body>
+</html>

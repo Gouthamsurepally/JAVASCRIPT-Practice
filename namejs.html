@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM by refering name</title>
+    <script>function bodyload(){
+        picName.src="../public/assets/a6.jpg"
+        frmRegistration.btnRegister.value="Register"
+        frmLogin.btnLogin.value="Login"
+
+}
+</script>
+    
+</head>
+<body onload="bodyload()">
+    <div>
+        <img width="400px" height="400px" name="picName">
+    </div>
+    <form name="frmRegistration">
+        <h2>REGISTRATION FORM</h2>
+        <input type="text" name="txtName" placeholder="Enter name"> <button name="btnRegister">Register</button>
+    </form>
+    <form name="frmLogin">
+        <h2>LOGIN FORM</h2>
+        <input type="text" name="textLogin"  placeholder="Enter details"> <button name="btnLogin">Login</button>
+
+    </form>
+    
+</body>
+</html>

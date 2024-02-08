@@ -1,0 +1,101 @@
+<!--   Q1) sum of integers in an array:
+    ------------------------------------
+    <script>
+    var data=[5,6,10,4];
+    let add=0;
+    for(let i=0;i<data.length;i++){
+        add=add+data[i];
+    }
+    document.write(add);
+</script>  -
+
+ Q2) Adding of two arrays:
+ ---------------------------
+<script>
+    var A=[6,7,8,9];
+    var B=[5,4,3,2];
+    let sum=[];
+    if(A.length===B.length){
+      for (let i=0;i<A.length;i++){
+        sum.push(A[i]+B[i]);
+      }
+      
+        document.write(sum);
+    }else{
+        document.write("array should be same length")
+    }
+</script>  -
+
+
+    Q3) finding oddNumbers from 1-100:
+  ----------------------------------------  
+<script>
+    let oddNumbers=[];
+     for(let i=1;i<=100;i++){
+        if(i % 2 !== 0){
+            oddNumbers.push(i);
+        }
+     }
+     console.log(oddNumbers);
+
+</script>    --
+
+
+  Q4)checking the numbers odd or even:
+  --------------------------------------
+<script>
+    
+    function EvenOrOdd(num){
+        return num %2 ===0 ?"even":"odd";
+
+    }
+    document.write(`${EvenOrOdd(34)} <br> ${EvenOrOdd(77)}`)
+  
+</script>  --
+
+Q5)finding the largest number from an array:
+-------------------------------
+
+<script>
+    var A=[30,90,45,24];
+     var largestNumber =A[0]  //assume the first index number be the largest
+
+     for(let i=1;i<A.length;i++){      //iterate through second index number from array
+        if(A[i]>largestNumber){      // checking the current element is larger than the largest number
+            largestNumber=A[i];      //if it is, it update the value
+        }
+     }
+     document.write(largestNumber);
+</script>  --
+
+Q6)Second largest number:
+-------------------
+
+<script>
+    var A=[12,34,56,76,14];
+
+    var Largest=A[0];
+    var SecondLargest=A[1];
+
+   for(let i=2;i<A.length;i++){
+    if(A[i]>Largest){
+        SecondLargest=Largest;
+        Largest=A[i];
+    }else if(A[i]>SecondLargest && A[i]!==Largest){
+        SecondLargest=A[i];
+    }
+   }
+    document.write(`the second largest number is ${SecondLargest}`)
+</script>  -->
+
+<script>
+    var n=6;
+    if(n%2 !==0){
+        document.write(`${n} is an odd number`);
+    } else{
+        document.write(`${n} is not an odd number`);
+    }
+</script>
+
+
+

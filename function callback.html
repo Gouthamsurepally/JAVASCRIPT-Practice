@@ -1,0 +1,30 @@
+<!--
+                    Function callback
+                    ------------------
+>>it is technique where we configure set of functions that execute according to state and situation.
+>>callback uses blocking technique.
+>>it is synchronous.
+>>it will not allow any other task to perform while executing the function.
+
+syntax:
+function Name(callBck1,callBack2){
+
+}
+Name(function(){},functuion(){});
+-->
+<script>
+    function GetAPI(url,success,failure){
+        if(url=="http://fakestoreapi.com"){
+            success();
+        } else{
+            failure();
+        }
+    }
+    GetAPI(prompt("enter url"),function(){
+        document.write("data fetched successfully...");
+    }, function(){
+        document.write("Error:unable to fetch");
+    }
+
+    )
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>startsWith and endsWith</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function VerifyCard(){
+            var card= document.getElementById("txtCard").value;
+            var pic= document.getElementById("pic");
+            if(card.startsWith("4455")){
+                pic.src="../public/assets/mastercard.jpeg";
+            }else{
+                pic.src="../public/assets/visacard.jpeg";
+            }
+        }
+
+        function VerifySkype(){
+            var skype= document.getElementById("txtSkype").value;
+            var skypeError= document.getElementById("skypeError");
+            if(skype.endsWith("outlook.com")){
+                skypeError.innerHTML="";
+            }else{
+                skypeError.innerHTML= "invalid skype Id".fontcolor('red');
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <h2>Verify Payment</h2>
+    <dl class="w-25">
+        <dt>Card Number</dt>
+        <dd  class="input-group">
+            <input type="text" class="form-control" id="txtCard" onblur="VerifyCard()" maxlength="16">
+        <img width="80px" id="pic" class="input-text-group"></dd>
+
+        <dt>Your Skype ID</dt>
+        <dd><input type="text" id="txtSkype" class="form-control" onblur="VerifySkype()">
+       </dd>
+       <dd id="skypeError"></dd>
+
+    </dl>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class newcar{
+            modelName="R15";
+            engineType="petrol engine";
+            fuelType="petrol";
+            color="black";
+            seatCoverType="synthetic";
+            
+                displayDetails(){
+                   document.write(
+                    `model Name: ${this.modelName}<br>engine type: ${this.engineType}<br>fuel Type: ${this.fuelType}<br>
+                    color: ${this.color}<br>seatCover Type: ${this.seatCoverType}
+                    `)
+                }
+        }
+        function bodyload(){
+         var R15= new newcar()
+        R15.displayDetails();
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    
+    
+</body>
+</html>

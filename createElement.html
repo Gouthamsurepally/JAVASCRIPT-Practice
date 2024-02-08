@@ -1,0 +1,54 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically creating html elements</title>
+    <script>
+        function SubmitClick(){
+            var pic= document.createElement("img");
+            pic.src="../public/assets/jailer.jpg";
+            pic.width="250";
+            pic.height="300";
+            document.querySelector("figure").appendChild(pic);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="SubmitClick()">submit</button>
+    <br>
+    <br>
+    <figure> </figure>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav</title>
+    <script>
+        function SubmitClick(){
+            var ul= document.createElement("ul");
+            var li1=document.createElement("li");
+            var li2=document.createElement("li");
+            li1.innerHTML="html";
+            li2.innerHTML="javascript";
+            ul.appendChild(li1);
+            ul.appendChild(li2);
+            document.querySelector("nav").appendChild(ul);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="SubmitClick()">submit</button>
+    <br>
+    <br>
+    <nav>
+
+    </nav>
+    
+</body>
+</html>

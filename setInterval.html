@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+       var count=0;
+       function Loading(){
+        count++;
+        document.querySelector("progress").value=count;
+        document.getElementById("status").innerHTML=`${count} % completed`;
+        if(count==100){
+            document.getElementById("loadingContainer").style.display="none";
+            document.getElementById("imgContainer").style.display="block";
+            document.querySelector("h2").innerHTML="Image Loaded";
+        }
+       }
+       var timer;
+       function loadImgClick(){
+        document.getElementById("btnContainer").style.display="none";
+        document.getElementById("loadingContainer").style.display="block";
+        timer=(Loading,100);
+        document.querySelector("h2").innerHTML="Image Loading";
+       }
+      
+       function StartClick(){
+        timer=setInterval(Loading,100);
+        document.querySelector("h2").innerHTML="Image Loading";
+       }
+
+       function ResumeClick(){
+        clearInterval(timer);
+        document.querySelector("h2").innerHTML="Loading Paused";
+       }
+
+    </script>
+    <style>
+        progress{
+            width:300px;
+            height:60px;
+        }
+    </style>
+</head>
+<body class="container-fluid justify-content-center align-items-center" style="height:100vh">
+    <div>
+        <h2></h2>
+        <div id="btnContainer" class="text-center">
+            <button class="btn btn-primary" onclick="loadImgClick()">Load Image</button>
+
+        </div>
+        <div id="loadingContainer" class="text-center" style="display:none;">
+            <div><progress min="1" max="100" value="1"></progress></div>
+            <div>
+                <button class="btn btn-success bi bi-play" onclick="StartClick()"></button>
+                 <button class="btn btn-danger bi bi-pause" onclick="ResumeClick()"></button>
+            </div>
+            <div id="status"></div>
+
+        </div>
+        <div id="imgContainer" style="display:none;">
+            <img src="../public/assets/a11.jpg" width="600px" height="400px">
+
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>charcodeAt()</title>
+    <script>
+        function VerifyName(){
+            var userName= document.getElementById("txtName").value;
+            var userError= document.getElementById("userError");
+            if(userName.length<4){
+                userError.innerHTML= "min 4 chars required".fontcolor('red');
+
+            }else{
+                userError.innerHTML= "";
+            }
+        }
+        function VerifyChar(){
+            var userName= document.getElementById("txtName").value;
+            var userError= document.getElementById("userError");
+            if(userName.charCodeAt(0)>=65 && userName.charCodeAt(0)<=90){
+                userError.innerHTML="";
+            } else{
+                userError.innerHTML= "Name must starts with uppercase letter".fontcolor('red');
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Username</dt>
+        <dd><input type="text" id="txtName" onblur="VerifyChar()" onkeyup="VerifyName()"></dd>
+        <dd id="userError"></dd>
+        <dt>password</dt>
+        <dd>
+            <input type="password">
+        </dd>
+    </dl>
+</body>
+</html>

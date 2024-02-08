@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       bodyload=()=>{
+            fetch("https://fakestoreapi.com/products/categories")
+            .then(response=>response.json())
+            .then(data=>{
+                for(var item of data){
+                    var li=document.createElement("li");
+                    li.innerHTML=item;
+                    document.querySelector("ol").appendChild(li);
+                }
+            })
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <ol>
+
+    </ol>
+    
+</body>
+</html>
